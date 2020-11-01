@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DegreeController;
 use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +23,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
     return view('index');
 })->name('dashboard');
 
-Route::view('/degree/create', 'degree.create');
+Route::resource('/degree', DegreeController::class);
 
